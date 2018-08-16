@@ -11,13 +11,15 @@ var convert = function(num) {
 
   // While the decimal number is greater than 0,
   while (numberCopy > 0) {
-    // Loop through the indices of the decimalValue array.
+    // Loop through the indices of the number Value array.
     for (index = 0; index < numberValue.length; index++) {
       // Get the maximum decimal number less or equal then the decimal number.
       if (+numberValue[index] <= numberCopy && +numberValue[+index + 1] > numberCopy) {
-        // Add the Roman numeral & decrease numCopy by the decimal equivalent.
+        // Add the Roman numeral & decrease numCopy by the number value.
         romanChanger += romanNumeral[index];
         numberCopy -= numberValue[index];
+      } else (i !){
+
       }
     }
   }

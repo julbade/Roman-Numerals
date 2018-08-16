@@ -1,3 +1,17 @@
 #result {
   display: hide;
 }
+
+h1 {
+  text-align: center;
+}
+
+.success {
+    border-color: #4CAF50;
+    color: green;
+}
+
+.success:hover {
+      background-color: #4CAF50;
+      color: white;
+}
