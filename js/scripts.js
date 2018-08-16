@@ -2,36 +2,34 @@
 var convert = function(num) {
 
   // Arrays with their Matching Values
-  var numberValue = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+  var numberValue = ['1', '4', '5', '9', '10', '40', '50', '90', '100', '400', '500', '900', '1000'];
   var romanNumeral = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
-
-  // Create the same value of the num to roman numeral
-  var numCopy = num;
-  var romanValue = '';
+//
+  var numberCopy = num;
+  var romanChanger = '';
+  var index = 0
 
   // While the decimal number is greater than 0,
-  while (numCopy > 0) {
+  while (numberCopy > 0) {
     // Loop through the indices of the decimalValue array.
-    for (var index = 0; index < decimalValue.length; index++) {
+    for (index = 0; index < numberValue.length; index++) {
       // Get the maximum decimal number less or equal then the decimal number.
-      if (+decimalValue[index] <= numCopy && +decimalValue[+index + 1] > numCopy) {
+      if (+numberValue[index] <= numberCopy && +numberValue[+index + 1] > numberCopy) {
         // Add the Roman numeral & decrease numCopy by the decimal equivalent.
-        romanValue += romanNumeral[index];
-        numCopy -= numberValue[index];
+        romanChanger += romanNumeral[index];
+        numberCopy -= numberValue[index];
       }
     }
   }
 
-  return romanized;
-
+  return romanChanger;
 };
-
 //Front End
 $(document).ready(function() {
-  $("form#romanNumeral").submit(function(event) {
+  $("form#romanized").submit(function(event) {
     event.preventDefault();
-    var numeral = parseInt($("input#numeral").val());
-    var result = $("#numeral").val();
+    // var numeral = parseInt($("input#numeral").val());
+    var result = $("#enternum").val();
        $("#result").text(convert(result));
        $("#result").show();
      });
